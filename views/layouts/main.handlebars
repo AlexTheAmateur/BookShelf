@@ -11,10 +11,16 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">BookShelf</a>
-      </h1>
-    </header>
+    <h1>
+      <a href="/">BookShelf</a>
+    </h1>
+    <nav>
+      <a href="/login">LogIn</a>
+    </nav>
+    <nav>
+      <a href="/signup">SignUp</a>
+    </nav>
+  </header>
     <main>
       {{{ body }}}
     </main>
@@ -23,6 +29,9 @@
     </footer>
   </div>
 
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 
 </html>
