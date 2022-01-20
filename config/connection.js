@@ -8,6 +8,5 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
   port: 3306
 });
 
-// THIS IS A TEST!
 
 module.exports = sequelize;
