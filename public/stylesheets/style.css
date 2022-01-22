@@ -1,8 +1,8 @@
 :root {
     --primary: #ccd1b3;
     --secondary: #717470;
-    --tertiary: #788585;
-    --light-dark: #a1a0a1;
+    --tertiary: #96c2a7;
+    --light-dark: #578064;
     --dark: #201110;
     --border-radius: .3rem;
 }
@@ -53,6 +53,20 @@ p {
     font-size: 1.2rem;
 }
 
+.img {
+    background-position: center;
+    background-repeat: repeat;
+    height: 100px;
+    background-image: url(https://i.pinimg.com/originals/41/7d/a8/417da805a1e61791745efa106396f575.jpg);
+}
+
+.footerImg {
+    background-position: center;
+    background-repeat: repeat;
+    height: 100px;
+    background-image: url(https://i.pinimg.com/originals/41/7d/a8/417da805a1e61791745efa106396f575.jpg);
+}
+
 .btn {
     font-size: 1.3rem;
     text-decoration: none;
@@ -64,7 +78,7 @@ p {
     color: white;
     border: none;
     outline: none;
-    background-color: var(--light-dark);
+    background-color: var(--secondary);
     transform: translate(-1px, -1px);
 }
 
@@ -117,7 +131,7 @@ p {
     background-color: var(--primary);
     color: var(--dark);
     padding: 0 10px;
-    display: inline-block;
+    display: center;
     border-radius: var(--border-radius);
     box-shadow: 6px 5px var(--light-dark);
 }
@@ -157,7 +171,7 @@ textarea, input {
 
 textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid #d8d9da;
 }
 
 textarea {
@@ -213,33 +227,11 @@ main {
     margin-left: 16px;
 }
 
-.btn-no-style:hover {
-    background: none;
-    color: #3486eb;
-}
-
-.delete-post-btn {
-    background-color: #d41414;
-}
-
-.delete-post-btn:hover {
-    background-color: #ff643d;
-}
-
-.post {
-    margin-bottom: 2%;
-    line-height: 150%;
-}
-
-.post .title span {
-    font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
-}
-
 
 footer {
     border-top: 1px solid #ccc;
+    text-align: center;
+    font-weight: lighter;
     display: flex;
     justify-content: center;
     padding: 1%;
