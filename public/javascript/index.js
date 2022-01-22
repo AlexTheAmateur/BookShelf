@@ -1,5 +1,3 @@
-
-
 var getBook = function(query) {
     var apiUrl = (`https://www.googleapis.com/books/v1/volumes?q=${query}`);
     // make a get request to url
@@ -23,3 +21,5 @@ var displayBooks = function(data) {
     data.volumeInfo.imageLinks.thumbnail
 }
 
+displayBooks();
+module.exports = displayBooks
