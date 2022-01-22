@@ -20,6 +20,7 @@ var displayBooks = function(data) {
     data.volumeInfo.description &&
     data.volumeInfo.imageLinks.thumbnail
 }
-
+var bookSearchBtn = document.querySelector('.bookSearchBtn')
+bookSearchBtn.addEventListener("click",getBook)
 displayBooks();
 module.exports = displayBooks

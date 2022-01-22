@@ -12,10 +12,11 @@
   <div class="wrapper">
     <header>
     <h1>
-      <a href="/">BookShelf</a>
+      BookShelf
     </h1>
     <nav>
       {{#if loggedIn}}
+      <a href="/dashboard">Dashboard</a>
       <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
       <a href="/login">LogIn</a>
