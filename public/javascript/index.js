@@ -23,7 +23,17 @@ function searchedResult(data){
     console.log("This is where the searched resulsts will go")
     bookContainer.innerText=""
     let title = document.createElement("h2")
-    // title.innerText= data.items[0].volumeInfo.imageLinks.smallThumbnail
+    title.innerText= data.items[0].volumeInfo.title
+
+    // for (let i = 0; i < lists.length; i++) {
+    //     console.log("THIS IS WHERE THE BOOK WILL GO")
+    //     let bookList = document.createElement("li")
+    //     bookList.setAttribute("class" ,"bookList")
+        
+    //     bookList.appendChild(title)
+    //     bookList.innerText= lists[i]
+    // }
+
     firstImage = data.items[0].volumeInfo.imageLinks.smallThumbnail
     imageOne.innerHTML=("<img src='" + firstImage  + "'>")
     title.setAttribute("class", "title")
