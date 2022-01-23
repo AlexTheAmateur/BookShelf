@@ -12,39 +12,25 @@ function searchFormHandler(event) {
     fetch(apiBook).then(function (response) {
         if (response.ok) {
             return response.json()
+            
         }
-    }).then(function(data) {
+    }).then(function (data) {
         console.log(data);
         searchedResult(data)
     })
 }
 
-function searchedResult(data){
+function searchedResult(data) {
     console.log("This is where the searched resulsts will go")
-    bookContainer.innerText=""
+    bookContainer.innerText = ""
     let title = document.createElement("h2")
-    title.innerText= data.items[0].volumeInfo.title
+    title.innerText= data.items[0].volumeInfo.title 
 
-    // for (let i = 0; i < lists.length; i++) {
-    //     console.log("THIS IS WHERE THE BOOK WILL GO")
-    //     let bookList = document.createElement("li")
-    //     bookList.setAttribute("class" ,"bookList")
-        
-    //     bookList.appendChild(title)
-    //     bookList.innerText= lists[i]
-    // }
 
-    firstImage = data.items[0].volumeInfo.imageLinks.smallThumbnail
-    imageOne.innerHTML=("<img src='" + firstImage  + "'>")
-    title.setAttribute("class", "title")
-    bookContainer.appendChild(title)
 
-    let bookList = document.createElement("ul")
 
-    bookContainer.appendChild(bookList)
 
 };
-
 
 
 document.querySelector('.search').addEventListener('submit', searchFormHandler);
