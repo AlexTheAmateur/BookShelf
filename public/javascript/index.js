@@ -33,4 +33,5 @@ function searchedResult(data) {
 };
 
 
+
 document.querySelector('.search').addEventListener('submit', searchFormHandler);
