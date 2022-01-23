@@ -1,41 +1,53 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BookShelf</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShelf</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<body>
-  <div class="wrapper">
-    <header>
-    <h1>
-      BookShelf
-    </h1>
-    <nav>
-      {{#if loggedIn}}
-      <a href="/dashboard">Dashboard</a>
-      <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-      <a href="/login">LogIn</a>
-      <a href="/signup">SignUp</a>
-      {{/if}}
-    </nav>
-  </header>
-    <main>
-      {{{ body }}}
-      <a href="/layouts/main.handlebars">Book</a>
-    </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
-  </div>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          BookShelf
+        </h1>
+        <nav>
+          {{#if loggedIn}}
+            <a href="/dashboard">Dashboard</a>
+            <button id="logout" class="btn-no-style">Logout</button>
+          {{else}}
+            <a href="/login">LogIn</a>
+            <a href="/signup">SignUp</a>
+          {{/if}}
+          <section>
+            <h2>Search for a book: </h2>
+            <form class="new-search-form">
+              <div>
+                <input
+                  type="text"
+                  id="post-title"
+                  name="post-title"
+                  placeholder="Book Title..."
+                />
+              </div>
+              <button type="submit" class="bookSearchBtn">Search</button>
+            </form>
+          </section>
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        Thanks for visiting!
+      </footer>
+    </div>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
-</body>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>

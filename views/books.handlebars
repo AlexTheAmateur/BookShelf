@@ -2,7 +2,9 @@
   <div class="book-cover-l">
     {{thumbnail}}
   </div>
-  <div class="book-title-l"></div>
+  <div class="book-title-l">
+    {{title}}
+  </div>
   <div>
     <p>
       Description:
@@ -11,6 +13,10 @@
     <p>Number of Pages:
       {{pageCount}}
     </p>
+    {{#if NotSaved}}
+    <button id="save-to-favorites" class="btn-no-style">Save Book to Favorites</button>
+    {{else}}
+    <button id="remove-from-favorites" class="btn-no-style">Remove Book from Favorites</button>
   </div>
 </div>
 
