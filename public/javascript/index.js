@@ -1,4 +1,5 @@
 let bookContainer = document.getElementById("book-container")
+let imageOne = document.getElementById("image-1")
 
 function searchFormHandler(event) {
     console.log('HELLO');
@@ -22,7 +23,9 @@ function searchedResult(data){
     console.log("This is where the searched resulsts will go")
     bookContainer.innerText=""
     let title = document.createElement("h2")
-    title.innerText = data.items[0].volumeInfo.title
+    // title.innerText= data.items[0].volumeInfo.imageLinks.smallThumbnail
+    firstImage = data.items[0].volumeInfo.imageLinks.smallThumbnail
+    imageOne.innerHTML=("<img src='" + firstImage  + "'>")
     title.setAttribute("class", "title")
     bookContainer.appendChild(title)
 
@@ -30,15 +33,15 @@ function searchedResult(data){
 
     bookContainer.appendChild(bookList)
 
-    let lists = data.items[0].volumeInfo.authors
-    for (let i = 0; i < lists.length; i++) {
-        console.log("THIS IS WHERE THE BOOK WILL GO")
-        let bookList = document.createElement("li")
-        bookList.setAttribute("class" ,"bookList")
+    // let lists = data.items[0].volumeInfo.authors
+    // for (let i = 0; i < lists.length; i++) {
+    //     console.log("THIS IS WHERE THE BOOK WILL GO")
+    //     let bookList = document.createElement("li")
+    //     bookList.setAttribute("class" ,"bookList")
     
-        bookList.appendChild(title)
-        bookList.innerText= lists[i]
-    }
+    //     bookList.appendChild(title)
+    //     bookList.innerText= lists[i]
+    // }
 };
 
 
