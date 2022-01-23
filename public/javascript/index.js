@@ -43,15 +43,6 @@ function searchedResult(data){
 
     bookContainer.appendChild(bookList)
 
-    // let lists = data.items[0].volumeInfo.authors
-    // for (let i = 0; i < lists.length; i++) {
-    //     console.log("THIS IS WHERE THE BOOK WILL GO")
-    //     let bookList = document.createElement("li")
-    //     bookList.setAttribute("class" ,"bookList")
-    
-    //     bookList.appendChild(title)
-    //     bookList.innerText= lists[i]
-    // }
 };
 
 
