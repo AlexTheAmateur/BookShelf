@@ -9,8 +9,6 @@ const sequelize = new Sequelize(
   {
     host: "localhost",
     dialect: "mysql",
-    user: "root",
-    password: "Stophacking123!",
     port: 3306,
   }
 );
