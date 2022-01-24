@@ -24,7 +24,7 @@ function searchFormHandler(event) {
 }
 
 function searchedResult(data) {
-  console.log(data.items.volumeInfo.title);
+  console.log("woah");
   bookContainer.innerText = "";
   let title = document.createElement("h2");
   title.innerText = data.items[0].volumeInfo.title;
@@ -37,15 +37,20 @@ function searchedResult(data) {
   //     bookList.appendChild(title)
   //     bookList.innerText= lists[i]
   // }
+  let image = document.createElement("img");
+  tempArray = [];
+  tempArray.push(data.items[0].volumeInfo.title);
+  tempArray.push(data.items[0].volumeInfo.authors);
+  tempArray.push(data.items[0].volumeInfo.imageLinks.smallThumbnail);
+  JSON.stringify(tempArray);
 
-  firstImage = data.items[0].volumeInfo.imageLinks.smallThumbnail;
+  firstImage = tempArray[2];
   imageOne.innerHTML = "<img src='" + firstImage + "'>";
   title.setAttribute("class", "title");
+  console.log(imageOne);
   bookContainer.appendChild(title);
-
-  let bookList = document.createElement("ul");
-
-  bookContainer.appendChild(bookList);
+  bookContainer.appendChild(imageOne);
+  //bookContainer.appendChild(bookList);
 }
 
 document.querySelector(".search").addEventListener("submit", searchFormHandler);
