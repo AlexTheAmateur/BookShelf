@@ -37,7 +37,6 @@ function searchedResult(data) {
   //     bookList.appendChild(title)
   //     bookList.innerText= lists[i]
   // }
-  let image = document.createElement("img");
   tempArray = [];
   tempArray.push(data.items[0].volumeInfo.title);
   tempArray.push(data.items[0].volumeInfo.authors);
@@ -47,7 +46,6 @@ function searchedResult(data) {
   firstImage = tempArray[2];
   imageOne.innerHTML = "<img src='" + firstImage + "'>";
   title.setAttribute("class", "title");
-  console.log(imageOne);
   bookContainer.appendChild(title);
   bookContainer.appendChild(imageOne);
   //bookContainer.appendChild(bookList);
