@@ -1,50 +1,51 @@
-let bookContainer = document.getElementById("book-container")
-let imageOne = document.getElementById("image-1")
+let bookContainer = document.getElementById("book-container");
+let imageOne = document.getElementById("image-1");
 
 function searchFormHandler(event) {
-    console.log('HELLO');
-    event.preventDefault();
-    const searchInput = document.querySelector('input[name="title"]').value.trim();
-    console.log(searchInput);
+  console.log("HELLO");
+  event.preventDefault();
+  const searchInput = document
+    .querySelector('input[name="title"]')
+    .value.trim();
+  console.log(searchInput);
 
-    var apiBook = "https://www.googleapis.com/books/v1/volumes?q=" + searchInput;
+  var apiBook = "https://www.googleapis.com/books/v1/volumes?q=" + searchInput;
 
-    fetch(apiBook).then(function (response) {
-        if (response.ok) {
-            return response.json()
-        }
-    }).then(function(data) {
-        console.log(data);
-        searchedResult(data)
+  fetch(apiBook)
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
     })
+    .then(function (data) {
+      console.log(data);
+      searchedResult(data);
+    });
 }
 
-function searchedResult(data){
-    console.log("This is where the searched resulsts will go")
-    bookContainer.innerText=""
-    let title = document.createElement("h2")
-    title.innerText= data.items[0].volumeInfo.title
+function searchedResult(data) {
+  console.log(data.items.volumeInfo.title);
+  bookContainer.innerText = "";
+  let title = document.createElement("h2");
+  title.innerText = data.items[0].volumeInfo.title;
 
-    // for (let i = 0; i < lists.length; i++) {
-    //     console.log("THIS IS WHERE THE BOOK WILL GO")
-    //     let bookList = document.createElement("li")
-    //     bookList.setAttribute("class" ,"bookList")
-        
-    //     bookList.appendChild(title)
-    //     bookList.innerText= lists[i]
-    // }
+  // for (let i = 0; i < lists.length; i++) {
+  //     console.log("THIS IS WHERE THE BOOK WILL GO")
+  //     let bookList = document.createElement("li")
+  //     bookList.setAttribute("class" ,"bookList")
 
-    firstImage = data.items[0].volumeInfo.imageLinks.smallThumbnail
-    imageOne.innerHTML=("<img src='" + firstImage  + "'>")
-    title.setAttribute("class", "title")
-    bookContainer.appendChild(title)
+  //     bookList.appendChild(title)
+  //     bookList.innerText= lists[i]
+  // }
 
-    let bookList = document.createElement("ul")
+  firstImage = data.items[0].volumeInfo.imageLinks.smallThumbnail;
+  imageOne.innerHTML = "<img src='" + firstImage + "'>";
+  title.setAttribute("class", "title");
+  bookContainer.appendChild(title);
 
-    bookContainer.appendChild(bookList)
+  let bookList = document.createElement("ul");
 
-};
+  bookContainer.appendChild(bookList);
+}
 
-
-
-document.querySelector('.search').addEventListener('submit', searchFormHandler);
+document.querySelector(".search").addEventListener("submit", searchFormHandler);
