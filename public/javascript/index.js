@@ -1,6 +1,6 @@
 let bookContainer = document.getElementById("book-container");
-let imageOne = document.getElementById("image-1");
-
+let imageOne = document.createElement("img");
+imageOne.setAttribute("class", "column");
 function searchFormHandler(event) {
   console.log("HELLO");
   event.preventDefault();
@@ -24,31 +24,34 @@ function searchFormHandler(event) {
 }
 
 function searchedResult(data) {
-  console.log("woah");
   bookContainer.innerText = "";
+
   let title = document.createElement("h2");
   title.innerText = data.items[0].volumeInfo.title;
-
-  // for (let i = 0; i < lists.length; i++) {
-  //     console.log("THIS IS WHERE THE BOOK WILL GO")
-  //     let bookList = document.createElement("li")
-  //     bookList.setAttribute("class" ,"bookList")
-
-  //     bookList.appendChild(title)
-  //     bookList.innerText= lists[i]
-  // }
-  tempArray = [];
-  tempArray.push(data.items[0].volumeInfo.title);
-  tempArray.push(data.items[0].volumeInfo.authors);
-  tempArray.push(data.items[0].volumeInfo.imageLinks.smallThumbnail);
-  JSON.stringify(tempArray);
-
-  firstImage = tempArray[2];
-  imageOne.innerHTML = "<img src='" + firstImage + "'>";
-  title.setAttribute("class", "title");
   bookContainer.appendChild(title);
-  bookContainer.appendChild(imageOne);
-  //bookContainer.appendChild(bookList);
+
+  let bookList = document.createElement("li");
+  bookList.setAttribute("class", "bookList");
+  bookContainer.appendChild(bookList);
+  for (let i = 0; i < 1; i++) {
+    console.log("check out my loop!");
+
+    // for (let i = 0; i < lists.length; i++) {
+    //     console.log("THIS IS WHERE THE BOOK WILL GO")
+    //     let bookList = document.createElement("li")
+    //     bookList.setAttribute("class" ,"bookList")
+
+    //     bookList.appendChild(title)
+    //     bookList.innerText= lists[i]
+    // }
+
+    firstImage = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+    imageOne.innerHTML = "<img src='" + firstImage + "'>";
+    title.setAttribute("class", "title");
+
+    bookList.appendChild(imageOne);
+    //bookContainer.appendChild(bookList);
+  }
 }
 
 document.querySelector(".search").addEventListener("submit", searchFormHandler);
