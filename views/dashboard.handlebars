@@ -14,19 +14,19 @@
     </form>
 </section>
 
-{{#if posts.length}}
+{{!-- {{#if posts.length}} --}}
 <section>
-    <h2>Your Posts</h2>
+    <h2>Your Favorites</h2>
     <ol>
-        {{#each posts as |post|}}
+        {{!-- {{#each posts as |post|}} --}}
         <li>
             {{> post-info post}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
         </li>
-        {{/each}}
+        {{!-- {{/each}} --}}
     </ol>
 </section>
-{{/if}}
+{{!-- {{/if}} --}}
 <br>
 <br>
 <br>
