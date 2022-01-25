@@ -7,26 +7,26 @@
             <input type="text" id="favorite-book" name="favorite-book" />
         </div>
         <div>
-            <label for="comment-body">Posts</label>
+            <label for="comment-body">Rating: </label>
             <input id="comment-body" name="comment-body" />
         </div>
         <button type="submit" class="btn">Create</button>
     </form>
 </section>
 
-{{!-- {{#if posts.length}} --}}
+{{#if posts.length}}
 <section>
     <h2>Your Favorites</h2>
     <ol>
-        {{!-- {{#each posts as |post|}} --}}
+        {{#each posts as |post|}}
         <li>
             {{> post-info post}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
         </li>
-        {{!-- {{/each}} --}}
+        {{/each}}
     </ol>
 </section>
-{{!-- {{/if}} --}}
+{{/if}}
 <br>
 <br>
 <br>
@@ -50,3 +50,4 @@
 </form>
 
 <script src="/javascript/index.js"></script>
+<script src="/javascript/add-post.js"></script>

@@ -85,7 +85,6 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
-
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
@@ -125,5 +124,19 @@ router.get('/edit/:id', withAuth, (req, res) => {
   });
 });
 
-router.post
+
+router.post('/', withAuth, (req, res) => {
+  console.log(req.body.favorite_book, req.body.comment_text)
+  Post.create({
+    favorite_book: req.body.favorite_book,
+    comment_text: req.body.comment_text,
+    user_id: req.session.user_id
+  })
+  .then(dbPostData => res.json(dbPostData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 module.exports = router;

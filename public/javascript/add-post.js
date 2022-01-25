@@ -4,10 +4,9 @@ async function newFormHandler(event) {
   const favorite_book = document.querySelector('input[name="favorite-book"]').value;
   const comment_text = document.querySelector('input[name="comment-body"]').value;
 
-  const response = await fetch(`/api/posts`, {
+  const response = await fetch(`/dashboard`, {
     method: 'POST',
     body: JSON.stringify({
-      title,
       favorite_book,
       comment_text
     }),
@@ -17,10 +16,11 @@ async function newFormHandler(event) {
   });
 
   if (response.ok) {
+    console.log('this is working')
     document.location.replace('/dashboard');
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-favorite-form').addEventListener('submit', newFormHandler);
