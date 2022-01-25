@@ -124,4 +124,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
     res.status(500).json(err);
   });
 });
+
+router.post
 module.exports = router;
