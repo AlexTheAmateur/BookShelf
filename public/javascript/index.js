@@ -24,39 +24,28 @@ function searchFormHandler(event) {
 
 function searchedResult(data) {
   bookContainer.innerText = "";
+  bookContainer.setAttribute("class", "column");
 
-  let title = document.createElement("h2");
-  title.innerText = data.items[0].volumeInfo.title;
-  bookContainer.appendChild(title);
-
-  // let bookList = document.createElement("li");
-  // bookList.setAttribute("class", "bookList");
-  // bookContainer.appendChild(bookList);
   for (let i = 0; i < data.items.length; i++) {
+    let title = document.createElement("h3");
+    title.innerText = data.items[i].volumeInfo.title;
+
     let bookBox = document.createElement("div");
     let image = document.createElement("button");
-    bookContainer.setAttribute("class", "column");
-    bookContainer.setAttribute("id", "image-"[i]);
+    image.setAttribute("type", "button");
 
     let author = document.createElement("p");
-    bookContainer.setAttribute("class", "column");
+    author.setAttribute("class", "column");
     author.innerText = data.items[i].volumeInfo.authors;
-    // for (let i = 0; i < lists.length; i++) {
-    //     console.log("THIS IS WHERE THE BOOK WILL GO")
-    //     let bookList = document.createElement("li")
-    //     bookList.setAttribute("class" ,"bookList")
 
-    //     bookList.appendChild(title)
-    //     bookList.innerText= lists[i]
-    // }
     firstImage = data.items[i].volumeInfo.imageLinks.smallThumbnail;
     image.innerHTML = "<img src='" + firstImage + "'>";
     title.setAttribute("class", "title");
 
+    bookBox.appendChild(title);
     bookBox.appendChild(image);
     bookBox.appendChild(author);
     bookContainer.appendChild(bookBox);
-    //bookContainer.appendChild(bookList);
   }
 }
 
