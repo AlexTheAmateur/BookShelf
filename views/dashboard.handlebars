@@ -1,3 +1,38 @@
+<section>
+    <h2>Favorites</h2>
+
+    <form class="new-favorite-form">
+        <div>
+            <label for="favorite-book">Favorite Book: </label>
+            <input type="text" id="favorite-book" name="favorite-book" />
+        </div>
+        <div>
+            <label for="comment-body">Posts</label>
+            <input id="comment-body" name="comment-body" />
+        </div>
+        <button type="submit" class="btn">Create</button>
+    </form>
+</section>
+
+{{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
+<br>
+<br>
+<br>
+
+{{!This section is for the API fetch }}
+<h1>Search Books</h1>
 <form class="search">
   <div class="search-box">
     <input
