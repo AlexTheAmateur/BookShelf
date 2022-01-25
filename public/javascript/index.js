@@ -1,5 +1,4 @@
 let bookContainer = document.getElementById("book-container");
-let imageOne = document.getElementById("image-1");
 
 function searchFormHandler(event) {
   console.log("HELLO");
@@ -24,31 +23,30 @@ function searchFormHandler(event) {
 }
 
 function searchedResult(data) {
-  console.log("woah");
   bookContainer.innerText = "";
-  let title = document.createElement("h2");
-  title.innerText = data.items[0].volumeInfo.title;
+  bookContainer.setAttribute("class", "column");
 
-  // for (let i = 0; i < lists.length; i++) {
-  //     console.log("THIS IS WHERE THE BOOK WILL GO")
-  //     let bookList = document.createElement("li")
-  //     bookList.setAttribute("class" ,"bookList")
+  for (let i = 0; i < data.items.length; i++) {
+    let title = document.createElement("h3");
+    title.innerText = data.items[i].volumeInfo.title;
 
-  //     bookList.appendChild(title)
-  //     bookList.innerText= lists[i]
-  // }
-  tempArray = [];
-  tempArray.push(data.items[0].volumeInfo.title);
-  tempArray.push(data.items[0].volumeInfo.authors);
-  tempArray.push(data.items[0].volumeInfo.imageLinks.smallThumbnail);
-  JSON.stringify(tempArray);
+    let bookBox = document.createElement("div");
+    let image = document.createElement("button");
+    image.setAttribute("type", "button");
 
-  firstImage = tempArray[2];
-  imageOne.innerHTML = "<img src='" + firstImage + "'>";
-  title.setAttribute("class", "title");
-  bookContainer.appendChild(title);
-  bookContainer.appendChild(imageOne);
-  //bookContainer.appendChild(bookList);
+    let author = document.createElement("p");
+    author.setAttribute("class", "column");
+    author.innerText = data.items[i].volumeInfo.authors;
+
+    firstImage = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+    image.innerHTML = "<img src='" + firstImage + "'>";
+    title.setAttribute("class", "title");
+
+    bookBox.appendChild(title);
+    bookBox.appendChild(image);
+    bookBox.appendChild(author);
+    bookContainer.appendChild(bookBox);
+  }
 }
 
 document.querySelector(".search").addEventListener("submit", searchFormHandler);
