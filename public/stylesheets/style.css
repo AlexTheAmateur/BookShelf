@@ -40,14 +40,16 @@ main {
   width: 94%;
 }
 
-.wrapper {
-  width: 100%;
-  min-height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+div {
+  text-align: center;
 }
+section#book-container {
+column-count: 2;
 
+}
+h3.title {
+  font-size: medium;
+}
 p {
   font-size: 1.2rem;
 }
