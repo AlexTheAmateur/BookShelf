@@ -90,6 +90,7 @@ router.get('/:id', (req, res) => {
 
 
 router.put('/:id', withAuth, (req, res) => {
+  console.log("Post update back-end", req.body);
   Post.update(
     {
       favorite_book: req.body.favorite_book,
