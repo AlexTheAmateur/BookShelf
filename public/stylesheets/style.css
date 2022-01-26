@@ -44,7 +44,7 @@ div {
   text-align: center;
 }
 section#book-container {
-column-count: 2;
+column-count: 3;
 
 }
 
@@ -154,7 +154,8 @@ a {
 }
 
 a:link {
-  color: var(--dark)
+  color: var(--dark);
+  font-weight: normal;
 }
 
 button:hover,
@@ -229,10 +230,11 @@ main {
   text-decoration: none;
   color: var(--secondary);
   font-size: 100%;
-  font-weight: bold;
+  font-weight: normal;
   transition: color 0.1s;
   margin-left: 16px;
 }
+
 
 footer {
   border-top: 1px solid #ccc;
@@ -252,6 +254,7 @@ footer {
 li {
   text-align: right;
 }
+
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
