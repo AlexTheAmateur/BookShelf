@@ -47,9 +47,11 @@ section#book-container {
 column-count: 2;
 
 }
+
 h3.title {
   font-size: medium;
 }
+
 p {
   font-size: 1.2rem;
 }
@@ -82,6 +84,8 @@ p {
   background-color: var(--secondary);
   transform: translate(-1px, -1px);
 }
+
+
 
 .btn:hover {
   color: var(--primary);
@@ -149,9 +153,19 @@ a {
   border-radius: 5px;
 }
 
+a:link {
+  color: var(--dark)
+}
+
 button:hover,
 a:hover {
   background-color: var(--tertiary);
+}
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+  background-color: var(--secondary)
 }
 
 textarea,
@@ -182,7 +196,7 @@ form label {
 
 .wrapper {
   background-color: var(--primary);
-  width: 100%;
+  width: auto;
   min-height: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -234,3 +248,23 @@ footer {
   display: flex;
   flex-direction: row;
 }
+
+li {
+  text-align: right;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 2px solid #eee;
+}
+
+article.post div {
+  text-align: left;
+  
+}
+
+article.post h3 {
+  font-size: large;
+}
+
