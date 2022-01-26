@@ -11,22 +11,13 @@
     <div>
       <a href="/post/{{post.id}}"></a>
     </div>
+    <div>
+      <textarea name="comment-body"></textarea>
+    </div>
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
 </article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-
-{{!-- {{> comments post.comments}} --}}
 
 {{#if loggedIn}}
 <script src="/javascript/edit-post.js"></script>

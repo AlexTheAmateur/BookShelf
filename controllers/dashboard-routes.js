@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+// const sequelize = require('../config/connection');
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -14,14 +14,6 @@ router.get('/', withAuth, (req, res) => {
       'comment_text'
     ],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
       {
         model: User,
         attributes: ['username']
@@ -50,14 +42,6 @@ router.get('/post/:id', (req, res) => {
       'comment_text'
     ],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
       {
         model: User,
         attributes: ['username']
@@ -93,14 +77,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'comment_text'
     ],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
       {
         model: User,
         attributes: ['username']
@@ -124,9 +100,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
   });
 });
 
-
 router.post('/', withAuth, (req, res) => {
-  console.log(req.body.favorite_book, req.body.comment_text)
   Post.create({
     favorite_book: req.body.favorite_book,
     comment_text: req.body.comment_text,

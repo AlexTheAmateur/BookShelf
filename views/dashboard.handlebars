@@ -16,12 +16,12 @@
 
 {{#if posts.length}}
 <section>
-    <h2>Your Favorites</h2>
+    <h2>Your Favorites:</h2>
     <ol>
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">(Edit post)</a>
         </li>
         {{/each}}
     </ol>
@@ -43,8 +43,8 @@
     />
     <button type="submit">Search</button>
   </div>
-  <section id="book-container">
-    <div class="column" id="image-1"></div>
+  <section class="row" id="book-container">
+    <span class="row" id="image-1"></span>
   </section>
 
 </form>
