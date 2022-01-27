@@ -1,0 +1,62 @@
+<section>
+  <h2>Add to Your Favorites:</h2>
+
+  <form class="new-favorite-form">
+    <div>
+      <label for="favorite-book">Favorite Book: </label>
+      <input type="text" id="favorite-book" name="favorite-book" />
+    </div>
+    <div>
+      <label for="comment-body">Rating: </label>
+      <input id="comment-body" name="comment-body" />
+    </div>
+    <button type="submit" class="button medium-btn">Create</button>
+  </form>
+</section>
+
+<br>
+<hr>
+<br>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Favorites:</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">(Edit post)</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+<br>
+<hr>
+<br>
+
+{{!This section is for the API fetch }}
+<h2>Search Books:</h2>
+<form class="search">
+  <div class="search-box">
+    <input type="text" id="search-input" name="title" placeholder="Book Title" />
+    <button type="submit">Search</button>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card-deck">
+          <section class="" id="book-container">
+
+            {{!-- <span class="row" id="image-1"></span> --}}
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<script src="/javascript/index.js"></script>
+<script src="/javascript/add-post.js"></script>
