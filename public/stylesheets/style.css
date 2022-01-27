@@ -17,8 +17,6 @@ body {
   font-family: sans-serif;
   color: var(--dark);
   font-size: 25px;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 h1,
