@@ -36,7 +36,10 @@ async function signupFormHandler(event) {
     if (password === confirmPassword) {
       document.location.replace('/');
     } else {
+      // here you want to stop submission and reset form
       document.location.replace('/signup');
+      process.exit()
+      window.location.reload(true)
       alert('Passwords do not match!');
     }
   }

@@ -1,51 +1,46 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookShelf</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookShelf</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+</head>
 
-  <body>
-    <div class="wrapper">
-      <header class="hero">
-        <nav>
-          {{#if loggedIn}}
-            <a href="/dashboard" class="btn-no-style">Dashboard</a>
-            <button id="logout" class="btn-no-style">Logout</button>
-          {{else}}
-            <a href="/login" class="btn-no-style">LogIn</a>
-            <a href="/signup" class="btn-no-style">SignUp</a>
-          {{/if}}
-        </nav>
-        <h1 class="app-title"><i class="fab"></i>BookShelf</h1>
-      </header>
-      <div class="img"></div>
-      <main>
-        {{{body}}}
-      </main>
-      <footer>
-        Copyright &copy; 2022 | Customed Designed by Ronya Gettis, Molly Montgomery and
-        Alexander Wu | Contact Us
-      </footer>
-      <div class="footerImg"></div>
-    </div>
+<body>
+  <div class="wrapper">
+    <header class="hero">
+      <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard" class="btn-no-style">Dashboard</a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login" class="btn-no-style">LogIn</a>
+        <a href="/signup" class="btn-no-style">SignUp</a>
+        {{/if}}
+      </nav>
+      <h1 class="app-title"><i class="fab"></i>BookShelf</h1>
+    </header>
+    <div class="img"></div>
+    <main class="main">
+      {{{body}}}
+    </main>
+    
+    <footer class="footer">
+      Copyright &copy; 2022 | Customed Designed by Ronya Gettis, Molly Montgomery and
+      Alexander Wu | <a href="mailto:mollymontgomery515@gmail.com">Contact Us</a>
+    </footer>
+    <div class="footerImg"></div>
+  </div>
 
-    {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"
-      ></script>
-    {{/if}}
-  </body>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  {{/if}}
+</body>
 
 </html>

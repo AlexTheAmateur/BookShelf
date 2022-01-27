@@ -4,7 +4,6 @@
   --tertiary: #96c2a7;
   --light-dark: #578064;
   --dark: #201110;
-  --border-radius: 0.3rem;
 }
 
 * {
@@ -18,6 +17,8 @@ body {
   font-family: sans-serif;
   color: var(--dark);
   font-size: 25px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 h1,
@@ -46,6 +47,14 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+}
+section#book-container {
+column-count: 2;
+
+}
+
+h3.title {
+  font-size: medium;
 }
 
 p {
@@ -80,6 +89,8 @@ p {
   background-color: var(--secondary);
   transform: translate(-1px, -1px);
 }
+
+
 
 .btn:hover {
   color: var(--primary);
@@ -147,9 +158,20 @@ a {
   border-radius: 5px;
 }
 
+a:link {
+  color: var(--dark);
+  font-weight: normal;
+}
+
 button:hover,
 a:hover {
   background-color: var(--tertiary);
+}
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+  background-color: var(--secondary)
 }
 
 textarea,
@@ -180,7 +202,7 @@ form label {
 
 .wrapper {
   background-color: var(--primary);
-  width: 100%;
+  width: auto;
   min-height: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -213,10 +235,11 @@ main {
   text-decoration: none;
   color: var(--secondary);
   font-size: 100%;
-  font-weight: bold;
+  font-weight: normal;
   transition: color 0.1s;
   margin-left: 16px;
 }
+
 
 footer {
   border-top: 1px solid #ccc;
@@ -226,4 +249,58 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+}
+
+#image-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  text-align: right;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 2px solid #eee;
+}
+
+article.post div {
+  text-align: left;
+  
+}
+
+article.post h3 {
+  font-size: large;
+}
+
+.bookCard{
+  min-width: 200px;
+  margin: 15px;
+}
+
+nav {
+  text-align: right;
+}
+
+section {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.search-box {
+  text-align: center;
+}
+
+h1.searchBook {
+  text-align: center;
+}
+
+article {
+  text-align: center;
 }
