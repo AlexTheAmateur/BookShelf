@@ -13,20 +13,11 @@ async function signupFormHandler(event) {
         username,
         email,
         password,
-        // confirmPassword
       }),
       headers: { 'Content-Type': 'application/json' }
     });
-    // if (password === confirmPassword && response.ok) {
-    //   document.location.replace('/');
-    //   console.log('success');
-    // } else {
-    //   document.location('/signup')
-    // };
 
     if (response.ok) {
-      // document.location.replace('/');
-      // console.log('success');
       checkPassword();
     } else {
       alert(response.statusText);
@@ -36,10 +27,7 @@ async function signupFormHandler(event) {
     if (password === confirmPassword) {
       document.location.replace('/');
     } else {
-      // here you want to stop submission and reset form
       document.location.replace('/signup');
-      process.exit()
-      window.location.reload(true)
       alert('Passwords do not match!');
     }
   }
